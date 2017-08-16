@@ -1,0 +1,30 @@
+.admin-message-text {
+	font-style: normal;
+	font-size: 22px;
+	color: #004080;
+}
+.postConteiner{
+	background: #e5e5e5;
+	border-radius: 5px;
+	padding: 0px;
+	font-family:raleway;
+	/*margin-top: 0px;*/
+	height: auto;
+	width: 550px;
+	margin-left: 325px;
+}
+.titlesConteiner {
+	background: #e5e5e5;
+	border-radius: 5px;
+	padding: 0px;
+	font-family:raleway;
+	/*margin-top: 0px;*/
+	height: auto;
+	width: 275px;
+	margin-left: 30px;
+	float: left;
+}
+li.titlesConteiner:hover {
+	background: #cccccc;
+
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Gluteen</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/home.css}" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div th:replace="header :: header"></div>
+<div class="container text-center">
+    <div class="row">
+        <div class="col-sm-3 well">
+            <p style="color: #222222; text-align: left;">Başlıklar</p>
+            <ul th:each="title : ${titles}" style="list-style-type: none;">
+                <div class="row">
+                    <a th:href="@{ (${title.id}) }">
+                        <li class="coll-sm-3 ">
+                            <div style="color: #222222; text-align: left;" th:text="${title.titleBody}"></div>
+                        </li>
+                    </a>
+                </div>
+            </ul>
+        </div>
+        <div class="col-sm-7">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="panel panel-default text-left">
+                        <div class="panel-body">
+                            <div th:replace="reklam :: reklam"></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-9">
+                    <div class="well">
+                        Forumumuz kendine özgü kuralları olan, sınırsız özgürlük vaat etmeyen,
+                        akla her gelenin söylenmesinin ve isteyenin dilediği gibi davranmasının söz konusu olmadığı bir ortamdır.
+
+                        Üyeler buraya kendi özgür iradeleriyle geldiklerine göre forum kurallarına uymak durumundadırlar.
+                        O yüzden bu çerçeve dahilinde hareket etmeyi kabul eden üyelerimize saygılarımızı, sevgilerimizi sunuyoruz. Aksini düşünenlere de elimizden yolunuz açık olsun demekten başka bir şey gelmemektedir. Forumumuz belirlenmiş olan kurallara uymayı reddeden kullanıcılara hizmet vermek zorunda değildir.
+
+                        Forumumuzda paylaşıma sunulan tüm içerikten 5651 Sayılı Kanun'un 8 ve T.C.K'nın 125. maddesine göre paylaşımı yapanın kendisi sorumludur. Forumumuz paylaşımcıların gönderdiği içerikten doğabilecek yasal sorunlar nedeni ile sorumlu tutulamaz. Forumumuzdaki paylaşımlar hakkında tüm hukuksal bildirimler iletisim kanalı üzerinden bildirilmesi halinde, bildirimin bize ulaşmasından sonra en geç 7 (yedi) gün içerisinde yanıt verilir.
+
+                        Kurallara aykırı bir durum görüldüğünde, başka kullanıcıların konuya müdahil olması üzücü sonuçlar doğurduğundan, doğru davranışın RAPOR tuşu ile yöneticilere bildirilmesi olduğunu hatırlatırız.
+
+                        Üyeler Forumumuzun veya başka bir forum üyesinin özel bilgilerini alenen açıklayamaz.
+
+                        Kişisel tartışma şekline dönüşen konular derhal kapatılır! Kapatılan başlıklara (yazılara) ilgili özel mesaj veya e-posta atılmamasını rica ederiz. Sürekli ikili tartışma yaratan kullanıcılar önce uyarılır, sonra uzaklaştırma verilir.
+
+                        Kullanıcıların özellikle forumdaki yazışmalarda olabildiğince düzgün Türkçe kullanmaları önerilir. Asgari yazım kurallarına uyulması (Cümleye büyük harfle başlamak, nokta ile bitirmek) gerekmektedir. Tamamı büyük harften oluşan, noktalama işaretlerine yer verilmemiş veya haddinden fazla seviyesiz bir tarzda yazılmış iletilerin zor anlaşıldığı ve anlaşılsa bile dikkate alınmadığı bilinmelidir. Bu tür hatalar içeren ileti veya başlıklar yöneticiler tarafından gerek görülürse kaldırılabilir.
+
+                        Forum içi yazışmalarda kullanılacak dil ve üslup, forumun verimli olmasıyla doğrudan ilişkilidir. Bundan ötürü iletilerde küfür ve benzeri kaba ifadeler kullanılmaması ve başka birini küçük düşürücü, tahrik ve hakaret edici söylem ve tavırlardan uzak durulması özellikle gerekmektedir. Küfür içeren, aşırı laubali, başka bir kullanıcıya saldırı amaçlı veya genel olarak çirkin kabul edilen iletiler yöneticiler tarafından silinecektir. Aynı tutumu sürdürmekte ısrarlı davranan kullanıcı forum kullanımından süresiz men edilecektir. Bununla birlikte foruma katılan kullanıcıların seçtikleri kullanıcı isimlerinin de küfür içeren, diğer kullanıcıları taciz veya tahrik edecek özellikte olmaması gerekmektedir. Bu türde isimler doğrudan forum dışı bırakılacaktır. Aynı konu kullanıcıların avatar ve imzaları için de geçerlidir.
+
+                        Forumla ilgi ve ilişkisi olsun olmasın, her türlü kişi, kurum ve kuruluşu küçük düşürücü, hakaret içerikli mesajların yazılması kesinlikle yasaktır.
+
+                        Her türlü din, ırk, mezhep ayrımcılığı yapmak ve bu konuda tahrik edici, küçük düşürücü mesajlar yazmak yasaktır.
+
+                        Siyaset konularının konuşulması forumumuzda yasaktır.
+
+                        Forum Kuralları dışında bölümlere ait özel kurallar bulunabilir. Başlık açılan bölüme ait özel kuralları okumanız ve bu kurallara uymanız gerekmektedir.
+
+                        Kullanıcıların kendi yararları göz önünde tutularak hazırlanan bu kurallar tartışmaya açık değildir.
+
+                        Foruma üye olan kullanıcılar bu metni okumamış olsa da tüm kurallara uymayı kabul etmiş sayılır. Bu kurallar tüm kullanıcılar için bağlayıcı niteliktedir.
+
+                        Aynı kullanıcının foruma farklı isimlerle üye olması yasaktır. Bu durum fark edildiğinde kullanıcının en eski kullanıcı adı dışındakiler silinir ve kendisine uyarı verilir. Tekrarlanması sonucunda sürekli olarak forumdan uzaklaştırılır.
+
+                        Bu kuralları kabul etmeyen tüm üyeler forumu terkedebileceği gibi kurallara aykırı davranışlarda bulunan üyelerin sorun yaratan iletileri silinebilir yada kilitli konulara taşınabilir artı olarak kendilerine uyarı cezası verilir. Buna rağmen aynı davranışları sergilemekte ısrarcı davranan üyeler forumdan uzaklaştırılacaktır. Üye cezalandırmasını forumun yöneticileri yapar. Yöneticiler isterlerse diğer yönetim grupları ile istişare yaparak fikirlerini alabilir. Ancak nihai karar organı forumun yöneticisine aittir.
+
+                        Forum Yönetimi aynı kişinin birden fazla rumuz veya isimle, farklı kişilermiş gibi aynı konuda görüş belirttiğini tespit etmesi durumunda, kişinin tüm mesajlarını siler ve Forum'a girişini yasaklar. Yine buna bağlı olarak aynı kişinin birden fazla e-posta adresi ile başvurarak farklı isimler ile yazdığının tespit edilmesi durumunda forum ile ilişkisi kesilir. Eğer şifrenizi unuttuysanız iletişim linkinden şifrenizi isteyebilirsiniz. Kullanıcılar kendi kullanıcı adı ve şifrelerini korumakla sorumludurlar; başkası kullanır ve kural dışı yazı olursa forumdan uzaklaştırılırlar.
+
+                        Forumumuz yönetimi gerek görüldüğü takdirde bu kurallarda değişiklik yapma hakkına sahiptir. Kurallar eklendiği anda yürürlüğe girer ve tüm üyelerin okuduğu varsayılır.
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2 well">
+            <div class="well">
+                <div th:replace="reklam :: reklam"></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

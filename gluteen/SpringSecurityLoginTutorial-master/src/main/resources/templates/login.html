@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>giriş</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/login.css}" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<div th:replace="header :: header"></div>
+<div class="container text-center">
+	<div class="row">
+		<div class="col-sm-3 well">
+			<p style="color: #222222; text-align: left;">Başlıklar</p>
+			<ul th:each="title : ${titles}" style="list-style-type: none;">
+				<div class="row">
+					<a th:href="@{ (${title.id}) }">
+						<li class="coll-sm-3 ">
+							<div style="color: #222222; text-align: left;border-bottom-style: outset;" th:text="${title.titleBody}"></div>
+						</li>
+					</a>
+				</div>
+			</ul>
+		</div>
+		<div class="col-sm-7">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="panel panel-default text-left">
+						<div class="panel-body">
+							<div th:replace="reklam :: reklam"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-9">
+					<div class="well">
+						<form th:action="@{/login}" method="POST" class="form-signin">
+
+							<input type="text" id="email" name="email"  th:placeholder="Email"
+								   class="form-control" /> <br/>
+							<input type="password"  th:placeholder="Şifre"
+								   id="password" name="password" class="form-control" /> <br />
+
+							<div align="center" th:if="${param.error}">
+								<p style="font-size: 20; color: #FF1C19;">girdiğin email ya da şifre yanlış</p>
+							</div>
+							<button class="btn btn-lg btn-primary btn-block" name="Submit" value="Login" type="Submit" >Giriş Yap</button>
+
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-2 well">
+			<div class="well">
+				<div th:replace="reklam :: reklam"></div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+
+
+
+
+
+</body>
+</html>

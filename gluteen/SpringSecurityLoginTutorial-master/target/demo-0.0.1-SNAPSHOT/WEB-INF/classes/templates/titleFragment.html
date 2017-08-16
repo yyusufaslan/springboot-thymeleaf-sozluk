@@ -1,0 +1,14 @@
+<div>
+<ul th:each="title : ${titles}" th:fragment="titleFragment" class="" xmlns:th="http://www.w3.org/1999/xhtml">
+    <div class="row" >
+        <a th:href="@{ (${title.id}) }" >
+            <li class="btn btn-default btn-lg col-md-3 " >
+                <div th:text="${title.titleBody}"></div>
+                <!--<p align="right"><span><a href="#!/profile/{{post.postSender.id}}"> {{post.postSender.userName}}</a></span>  {{post.postDate | date:"MM/dd/yyyy '...' h:mm"}}</p>-->
+
+            </li>
+        </a>
+    </div>
+</ul>
+
+</div>
